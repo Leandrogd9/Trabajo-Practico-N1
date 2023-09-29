@@ -4,7 +4,11 @@ public class Principal extends javax.swing.JFrame {
 
     //Punto 6
     private int[] vectorPunto6 = new int[30];
-    private int indice = 0;
+    private int indice6 = 0;
+    
+    //Punto 8
+    private int[] vectorPunto8 = new int[30];
+    private int indice8 = 0;
     
     public Principal() {
         initComponents();
@@ -72,14 +76,14 @@ public class Principal extends javax.swing.JFrame {
         jLabel27 = new javax.swing.JLabel();
         jPanel17 = new javax.swing.JPanel();
         jLabel28 = new javax.swing.JLabel();
-        jTextField18 = new javax.swing.JTextField();
-        jButton8 = new javax.swing.JButton();
-        jTextField19 = new javax.swing.JTextField();
-        jLabel29 = new javax.swing.JLabel();
+        txtPunto8 = new javax.swing.JTextField();
+        btnPunto8 = new javax.swing.JButton();
+        txtVectorResultado8 = new javax.swing.JTextField();
+        txtVectorPunto8 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
-        jTextField20 = new javax.swing.JTextField();
-        jTextField21 = new javax.swing.JTextField();
+        txtElementoMenor = new javax.swing.JTextField();
+        txtElementoMayor = new javax.swing.JTextField();
         jLabel32 = new javax.swing.JLabel();
         jPanel18 = new javax.swing.JPanel();
         jLabel35 = new javax.swing.JLabel();
@@ -609,7 +613,7 @@ public class Principal extends javax.swing.JFrame {
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel16Layout.createSequentialGroup()
                 .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 479, Short.MAX_VALUE))
+                .addGap(0, 524, Short.MAX_VALUE))
             .addGroup(jPanel16Layout.createSequentialGroup()
                 .addGap(59, 59, 59)
                 .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -634,27 +638,27 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel28.setText("Numero:");
 
-        jTextField18.addActionListener(new java.awt.event.ActionListener() {
+        txtPunto8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField18ActionPerformed(evt);
+                txtPunto8ActionPerformed(evt);
             }
         });
 
-        jButton8.setText("=");
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
+        btnPunto8.setText("=");
+        btnPunto8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
+                btnPunto8ActionPerformed(evt);
             }
         });
 
-        jTextField19.setEditable(false);
-        jTextField19.addActionListener(new java.awt.event.ActionListener() {
+        txtVectorResultado8.setEditable(false);
+        txtVectorResultado8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField19ActionPerformed(evt);
+                txtVectorResultado8ActionPerformed(evt);
             }
         });
 
-        jLabel29.setText("Vector [30]:");
+        txtVectorPunto8.setText("Vector [30]:");
 
         jLabel30.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel30.setText("Punto 8");
@@ -662,17 +666,17 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel31.setText("Elemento menor que 0:");
 
-        jTextField20.setEditable(false);
-        jTextField20.addActionListener(new java.awt.event.ActionListener() {
+        txtElementoMenor.setEditable(false);
+        txtElementoMenor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField20ActionPerformed(evt);
+                txtElementoMenorActionPerformed(evt);
             }
         });
 
-        jTextField21.setEditable(false);
-        jTextField21.addActionListener(new java.awt.event.ActionListener() {
+        txtElementoMayor.setEditable(false);
+        txtElementoMayor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField21ActionPerformed(evt);
+                txtElementoMayorActionPerformed(evt);
             }
         });
 
@@ -689,46 +693,47 @@ public class Principal extends javax.swing.JFrame {
                         .addGap(16, 16, 16)
                         .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel28)
-                            .addComponent(jTextField18, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE))
+                            .addComponent(txtPunto8, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnPunto8, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel17Layout.createSequentialGroup()
                                 .addComponent(jLabel31)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField20, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtElementoMenor, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
                                 .addComponent(jLabel32)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField21, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtElementoMayor))
                             .addGroup(jPanel17Layout.createSequentialGroup()
-                                .addComponent(jLabel29)
+                                .addComponent(txtVectorPunto8)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField19)))))
-                .addContainerGap(31, Short.MAX_VALUE))
+                                .addComponent(txtVectorResultado8, javax.swing.GroupLayout.PREFERRED_SIZE, 342, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE)))))
+                .addContainerGap())
         );
         jPanel17Layout.setVerticalGroup(
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel17Layout.createSequentialGroup()
                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jTextField19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtVectorResultado8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel17Layout.createSequentialGroup()
                         .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel28)
-                            .addComponent(jLabel29))))
+                            .addComponent(txtVectorPunto8))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel32)
-                        .addComponent(jTextField21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtElementoMayor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton8)
+                        .addComponent(txtPunto8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnPunto8)
                         .addComponent(jLabel31)
-                        .addComponent(jTextField20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtElementoMenor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -819,7 +824,7 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel34)
                     .addComponent(jTextField23, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(64, Short.MAX_VALUE))
         );
         jPanel19Layout.setVerticalGroup(
             jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -905,7 +910,7 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(219, 219, 219)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 519, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 220, Short.MAX_VALUE))
+                .addGap(0, 265, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
@@ -1002,20 +1007,20 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_txtPunto6ActionPerformed
 
     private void btnPunto6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPunto6ActionPerformed
-        txtVectorPunto6.setText("Vector[" + indice + "]");
+        txtVectorPunto6.setText("Vector[" + indice6 + "]");
         String resultado = "";
         String resultado2 = "";
 
-        if (indice < 30) {
-            this.vectorPunto6[indice] = Integer.parseInt(txtPunto6.getText());
-            this.indice++;
+        if (indice6 < 30) {
+            this.vectorPunto6[indice6] = Integer.parseInt(txtPunto6.getText());
+            this.indice6++;
 
-            for (int i = 0; i < indice; i++) {
+            for (int i = 0; i < indice6; i++) {
                 resultado += this.vectorPunto6[i] + " ";
             }
             txtVectorResultado.setText(resultado);
         } else {
-            for (int i = 1; i < indice-1; i++) {
+            for (int i = 1; i < indice6-1; i++) {
                 if (vectorPunto6[i-1] == 0) {
                     resultado2 += this.vectorPunto6[i] + " ";
                 }
@@ -1037,25 +1042,48 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtResultado7ActionPerformed
 
-    private void jTextField18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField18ActionPerformed
+    private void txtPunto8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPunto8ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField18ActionPerformed
+    }//GEN-LAST:event_txtPunto8ActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton8ActionPerformed
+    private void btnPunto8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPunto8ActionPerformed
+        txtVectorPunto8.setText("Vector[" + indice8 + "]");
+        String resultado = "";
 
-    private void jTextField19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField19ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField19ActionPerformed
+        if (indice8 < 30) {
+            this.vectorPunto8[indice8] = Integer.parseInt(txtPunto8.getText());
+            this.indice8++;
 
-    private void jTextField20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField20ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField20ActionPerformed
+            for (int i = 0; i < indice8; i++) {
+                resultado += this.vectorPunto8[i] + " ";
+            }
+            txtVectorResultado8.setText(resultado);
+        } else {
+           for (int i = 0; i < indice8; i++) {
+                if(vectorPunto8[i] < 0){
+                    txtElementoMenor.setText("Vector["+ i +"] = " + vectorPunto8[i]);
+                    i = indice8;
+                }
+            }
+           for (int i = 1; i < indice8; i++) {
+                if(vectorPunto8[i] > vectorPunto8[i-1]){
+                    txtElementoMayor.setText("Vector["+ i +"] = " + vectorPunto8[i]);
+                }
+            }
+        }
+    }//GEN-LAST:event_btnPunto8ActionPerformed
 
-    private void jTextField21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField21ActionPerformed
+    private void txtVectorResultado8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtVectorResultado8ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField21ActionPerformed
+    }//GEN-LAST:event_txtVectorResultado8ActionPerformed
+
+    private void txtElementoMenorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtElementoMenorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtElementoMenorActionPerformed
+
+    private void txtElementoMayorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtElementoMayorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtElementoMayorActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         // TODO add your handling code here:
@@ -1108,8 +1136,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton btnPunto4;
     private javax.swing.JButton btnPunto5;
     private javax.swing.JButton btnPunto6;
+    private javax.swing.JButton btnPunto8;
     private javax.swing.JComboBox<String> cmPulgada;
-    private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -1130,7 +1158,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
@@ -1160,20 +1187,19 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JTextField jTextField18;
-    private javax.swing.JTextField jTextField19;
-    private javax.swing.JTextField jTextField20;
-    private javax.swing.JTextField jTextField21;
     private javax.swing.JTextField jTextField22;
     private javax.swing.JTextField jTextField23;
     private javax.swing.JTextField txtCatAdyacente;
     private javax.swing.JTextField txtCatOpuesto;
+    private javax.swing.JTextField txtElementoMayor;
+    private javax.swing.JTextField txtElementoMenor;
     private javax.swing.JTextField txtPunto1_1;
     private javax.swing.JTextField txtPunto1_2;
     private javax.swing.JTextField txtPunto2;
     private javax.swing.JTextField txtPunto3;
     private javax.swing.JTextField txtPunto5;
     private javax.swing.JTextField txtPunto6;
+    private javax.swing.JTextField txtPunto8;
     private javax.swing.JTextField txtResultado1;
     private javax.swing.JTextField txtResultado2;
     private javax.swing.JTextField txtResultado3;
@@ -1182,6 +1208,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextField txtResultado6;
     private javax.swing.JTextField txtResultado7;
     private javax.swing.JLabel txtVectorPunto6;
+    private javax.swing.JLabel txtVectorPunto8;
     private javax.swing.JTextField txtVectorResultado;
+    private javax.swing.JTextField txtVectorResultado8;
     // End of variables declaration//GEN-END:variables
 }
