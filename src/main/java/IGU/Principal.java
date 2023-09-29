@@ -1,15 +1,26 @@
 package IGU;
 
+import java.util.Arrays;
+import javax.swing.JDialog;
+import javax.swing.JOptionPane;
+
 public class Principal extends javax.swing.JFrame {
 
     //Punto 6
     private int[] vectorPunto6 = new int[30];
     private int indice6 = 0;
-    
+
     //Punto 8
     private int[] vectorPunto8 = new int[30];
     private int indice8 = 0;
-    
+
+    //Punto 10
+    private int[][] matriz = new int[5][10];
+    private int indiceI = 0;
+    private int indiceJ = 0;
+    private int[] sumaFila = new int[]{0, 0, 0, 0, 0};
+    private String resultadoPunto10 = "";
+
     public Principal() {
         initComponents();
     }
@@ -88,15 +99,15 @@ public class Principal extends javax.swing.JFrame {
         jPanel18 = new javax.swing.JPanel();
         jLabel35 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        txtMatrizUnidad = new javax.swing.JTextArea();
         jPanel19 = new javax.swing.JPanel();
         jLabel33 = new javax.swing.JLabel();
-        jTextField22 = new javax.swing.JTextField();
-        jButton9 = new javax.swing.JButton();
+        txtPunto10 = new javax.swing.JTextField();
+        btnPunto10 = new javax.swing.JButton();
         jLabel36 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
-        jTextField23 = new javax.swing.JTextField();
+        txtAreaPunto10 = new javax.swing.JTextArea();
+        txtResultado10 = new javax.swing.JTextField();
         jLabel34 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -613,7 +624,7 @@ public class Principal extends javax.swing.JFrame {
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel16Layout.createSequentialGroup()
                 .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 524, Short.MAX_VALUE))
+                .addGap(0, 592, Short.MAX_VALUE))
             .addGroup(jPanel16Layout.createSequentialGroup()
                 .addGap(59, 59, 59)
                 .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -743,10 +754,11 @@ public class Principal extends javax.swing.JFrame {
         jLabel35.setText("Punto 9");
         jLabel35.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jTextArea1.setEditable(false);
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        txtMatrizUnidad.setEditable(false);
+        txtMatrizUnidad.setColumns(10);
+        txtMatrizUnidad.setRows(5);
+        txtMatrizUnidad.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jScrollPane1.setViewportView(txtMatrizUnidad);
 
         javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
         jPanel18.setLayout(jPanel18Layout);
@@ -754,51 +766,48 @@ public class Principal extends javax.swing.JFrame {
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel18Layout.createSequentialGroup()
                 .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(80, 80, 80)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(100, 100, 100)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel18Layout.setVerticalGroup(
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel18Layout.createSequentialGroup()
-                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel18Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(7, Short.MAX_VALUE))
+                .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE)
         );
 
         jPanel19.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jLabel33.setText("Numero:");
 
-        jTextField22.addActionListener(new java.awt.event.ActionListener() {
+        txtPunto10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField22ActionPerformed(evt);
+                txtPunto10ActionPerformed(evt);
             }
         });
 
-        jButton9.setText("=");
-        jButton9.addActionListener(new java.awt.event.ActionListener() {
+        btnPunto10.setText("=");
+        btnPunto10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton9ActionPerformed(evt);
+                btnPunto10ActionPerformed(evt);
             }
         });
 
         jLabel36.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel36.setText("Punto 7");
+        jLabel36.setText("Punto 10");
         jLabel36.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jTextArea2.setEditable(false);
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jScrollPane2.setViewportView(jTextArea2);
+        txtAreaPunto10.setEditable(false);
+        txtAreaPunto10.setColumns(10);
+        txtAreaPunto10.setRows(5);
+        jScrollPane2.setViewportView(txtAreaPunto10);
 
-        jTextField23.setEditable(false);
-        jTextField23.addActionListener(new java.awt.event.ActionListener() {
+        txtResultado10.setEditable(false);
+        txtResultado10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField23ActionPerformed(evt);
+                txtResultado10ActionPerformed(evt);
             }
         });
 
@@ -815,16 +824,16 @@ public class Principal extends javax.swing.JFrame {
                         .addGap(16, 16, 16)
                         .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel33)
-                            .addComponent(jTextField22, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE))
+                            .addComponent(txtPunto10, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnPunto10, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel34)
-                    .addComponent(jTextField23, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(64, Short.MAX_VALUE))
+                    .addComponent(txtResultado10, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(174, Short.MAX_VALUE))
         );
         jPanel19Layout.setVerticalGroup(
             jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -836,17 +845,15 @@ public class Principal extends javax.swing.JFrame {
                         .addComponent(jLabel33)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton9)))
-                    .addGroup(jPanel19Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtPunto10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnPunto10)))
                     .addGroup(jPanel19Layout.createSequentialGroup()
                         .addGap(23, 23, 23)
                         .addComponent(jLabel34)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(7, Short.MAX_VALUE))
+                        .addComponent(txtResultado10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -910,7 +917,7 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(219, 219, 219)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 519, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 265, Short.MAX_VALUE))
+                .addGap(0, 333, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
@@ -948,9 +955,13 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_txtResultado2ActionPerformed
 
     private void btnPunto2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPunto2ActionPerformed
-        Double num = Double.valueOf(txtPunto2.getText());
+        try {
+            Double num = Double.valueOf(txtPunto2.getText());
 
-        txtResultado2.setText(String.format("%.2f", Math.pow(num, 2)));
+            txtResultado2.setText(String.format("%.2f", Math.pow(num, 2)));
+        } catch (NumberFormatException e) {
+            this.mensajeError();
+        }
     }//GEN-LAST:event_btnPunto2ActionPerformed
 
     private void txtPunto3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPunto3ActionPerformed
@@ -978,17 +989,21 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_txtPunto5ActionPerformed
 
     private void btnPunto5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPunto5ActionPerformed
-        int factorial = Integer.parseInt(txtPunto5.getText());
+        try {
+            int factorial = Integer.parseInt(txtPunto5.getText());
 
-        if (factorial != 0) {
-            for (int i = factorial - 1; i >= 1; i--) {
-                factorial *= i;
+            if (factorial != 0) {
+                for (int i = factorial - 1; i >= 1; i--) {
+                    factorial *= i;
+                }
+            } else {
+                factorial = 1;
             }
-        } else {
-            factorial = 1;
-        }
 
-        txtResultado5.setText(String.valueOf(factorial));
+            txtResultado5.setText(String.valueOf(factorial));
+        } catch (NumberFormatException e) {
+            this.mensajeError();
+        }
     }//GEN-LAST:event_btnPunto5ActionPerformed
 
     private void txtResultado5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtResultado5ActionPerformed
@@ -996,10 +1011,14 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_txtResultado5ActionPerformed
 
     private void btnPunto1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPunto1ActionPerformed
-        Double num1 = Double.valueOf(txtPunto1_1.getText());
-        Double num2 = Double.valueOf(txtPunto1_2.getText());
+        try {
+            Double num1 = Double.valueOf(txtPunto1_1.getText());
+            Double num2 = Double.valueOf(txtPunto1_2.getText());
 
-        txtResultado1.setText(String.valueOf(num1 + num2));
+            txtResultado1.setText(String.valueOf(num1 + num2));
+        } catch (NumberFormatException e) {
+            this.mensajeError();
+        }
     }//GEN-LAST:event_btnPunto1ActionPerformed
 
     private void txtPunto6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPunto6ActionPerformed
@@ -1007,26 +1026,30 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_txtPunto6ActionPerformed
 
     private void btnPunto6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPunto6ActionPerformed
-        txtVectorPunto6.setText("Vector[" + indice6 + "]");
-        String resultado = "";
-        String resultado2 = "";
+        try {
+            txtVectorPunto6.setText("Vector[" + indice6 + "]");
+            String resultado = "";
+            String resultado2 = "";
 
-        if (indice6 < 30) {
-            this.vectorPunto6[indice6] = Integer.parseInt(txtPunto6.getText());
-            this.indice6++;
+            if (indice6 < 30) {
+                this.vectorPunto6[indice6] = Integer.parseInt(txtPunto6.getText());
+                this.indice6++;
 
-            for (int i = 0; i < indice6; i++) {
-                resultado += this.vectorPunto6[i] + " ";
-            }
-            txtVectorResultado.setText(resultado);
-        } else {
-            for (int i = 1; i < indice6-1; i++) {
-                if (vectorPunto6[i-1] == 0) {
-                    resultado2 += this.vectorPunto6[i] + " ";
+                for (int i = 0; i < indice6; i++) {
+                    resultado += this.vectorPunto6[i] + " ";
                 }
+                txtVectorResultado.setText(resultado);
+            } else {
+                for (int i = 1; i < indice6 - 1; i++) {
+                    if (vectorPunto6[i - 1] == 0) {
+                        resultado2 += this.vectorPunto6[i] + " ";
+                    }
+                }
+
+                txtResultado6.setText(resultado2);
             }
-            
-            txtResultado6.setText(resultado2);
+        } catch (NumberFormatException e) {
+            this.mensajeError();
         }
     }//GEN-LAST:event_btnPunto6ActionPerformed
 
@@ -1047,29 +1070,33 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_txtPunto8ActionPerformed
 
     private void btnPunto8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPunto8ActionPerformed
-        txtVectorPunto8.setText("Vector[" + indice8 + "]");
-        String resultado = "";
+        try {
+            txtVectorPunto8.setText("Vector[" + indice8 + "]");
+            String resultado = "";
 
-        if (indice8 < 30) {
-            this.vectorPunto8[indice8] = Integer.parseInt(txtPunto8.getText());
-            this.indice8++;
+            if (indice8 < 30) {
+                this.vectorPunto8[indice8] = Integer.parseInt(txtPunto8.getText());
+                this.indice8++;
 
-            for (int i = 0; i < indice8; i++) {
-                resultado += this.vectorPunto8[i] + " ";
-            }
-            txtVectorResultado8.setText(resultado);
-        } else {
-           for (int i = 0; i < indice8; i++) {
-                if(vectorPunto8[i] < 0){
-                    txtElementoMenor.setText("Vector["+ i +"] = " + vectorPunto8[i]);
-                    i = indice8;
+                for (int i = 0; i < indice8; i++) {
+                    resultado += this.vectorPunto8[i] + " ";
+                }
+                txtVectorResultado8.setText(resultado);
+            } else {
+                for (int i = 0; i < indice8; i++) {
+                    if (vectorPunto8[i] < 0) {
+                        txtElementoMenor.setText("Vector[" + i + "] = " + vectorPunto8[i]);
+                        i = indice8;
+                    }
+                }
+                for (int i = 1; i < indice8; i++) {
+                    if (vectorPunto8[i] > vectorPunto8[i - 1]) {
+                        txtElementoMayor.setText("Vector[" + i + "] = " + vectorPunto8[i]);
+                    }
                 }
             }
-           for (int i = 1; i < indice8; i++) {
-                if(vectorPunto8[i] > vectorPunto8[i-1]){
-                    txtElementoMayor.setText("Vector["+ i +"] = " + vectorPunto8[i]);
-                }
-            }
+        } catch (NumberFormatException e) {
+            this.mensajeError();
         }
     }//GEN-LAST:event_btnPunto8ActionPerformed
 
@@ -1085,52 +1112,100 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtElementoMayorActionPerformed
 
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton9ActionPerformed
+    private void btnPunto10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPunto10ActionPerformed
+        try {
+            if (indiceI < 5) {
+                if (indiceJ < 10) {
+                    this.matriz[indiceI][indiceJ] = Integer.parseInt(txtPunto10.getText());
 
-    private void jTextField22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField22ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField22ActionPerformed
+                    this.resultadoPunto10 += txtPunto10.getText() + " - ";
 
-    private void jTextField23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField23ActionPerformed
+                    this.sumaFila[indiceI] += matriz[indiceI][indiceJ];
+
+                    this.indiceJ++;
+                } else {
+                    resultadoPunto10 = resultadoPunto10.substring(0, resultadoPunto10.length() - 3) + "\n";
+                    this.indiceJ = 0;
+                    this.indiceI++;
+                }
+            }
+            txtAreaPunto10.setText(resultadoPunto10);
+            txtResultado10.setText(Arrays.toString(sumaFila));
+        } catch (NumberFormatException e) {
+            this.mensajeError();
+        }
+    }//GEN-LAST:event_btnPunto10ActionPerformed
+
+    private void txtPunto10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPunto10ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField23ActionPerformed
+    }//GEN-LAST:event_txtPunto10ActionPerformed
+
+    private void txtResultado10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtResultado10ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtResultado10ActionPerformed
 
     private void btnPunto3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPunto3ActionPerformed
-        Double num = Double.valueOf(txtPunto3.getText());
-        String eleccion = (String) cmPulgada.getSelectedItem();
+        try {
+            Double num = Double.valueOf(txtPunto3.getText());
+            String eleccion = (String) cmPulgada.getSelectedItem();
 
-        if (eleccion.equalsIgnoreCase("pulgadas")) {
-            txtResultado3.setText(String.format("%.2f", num * 39.37));
-        } else {
-            txtResultado3.setText(String.format("%.2f", num / 0.3048));
+            if (eleccion.equalsIgnoreCase("pulgadas")) {
+                txtResultado3.setText(String.format("%.2f", num * 39.37));
+            } else {
+                txtResultado3.setText(String.format("%.2f", num / 0.3048));
+            }
+        } catch (NumberFormatException e) {
+            this.mensajeError();
         }
     }//GEN-LAST:event_btnPunto3ActionPerformed
 
     private void btnPunto4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPunto4ActionPerformed
-        Double catOp = Double.valueOf(txtCatOpuesto.getText());
-        Double catAd = Double.valueOf(txtCatAdyacente.getText());
+        try {
+            Double catOp = Double.valueOf(txtCatOpuesto.getText());
+            Double catAd = Double.valueOf(txtCatAdyacente.getText());
 
-        txtResultado4.setText(String.format("%.2f", (Math.sqrt((Math.pow(catOp, 2) + Math.pow(catAd, 2))))));
+            txtResultado4.setText(String.format("%.2f", (Math.sqrt((Math.pow(catOp, 2) + Math.pow(catAd, 2))))));
+        } catch (NumberFormatException e) {
+            this.mensajeError();
+        }
     }//GEN-LAST:event_btnPunto4ActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        //Punto 7
         int[] vector = new int[10];
         String resultado = "1 - ";
-         
-        vector[0] = 1; 
-        for(int i = 0; i < vector.length-1; i++){
+
+        vector[0] = 1;
+        for (int i = 0; i < vector.length - 1; i++) {
             //Se hizo un ajuste ya que en el ejemplo el vector empieza en A[1] y en java el primer indice de un vector es 0, asi que para el almacenamiento se tomo de 0 a 9 y en los calculos se tomo de 1 a 10
-            vector[i+1] = (i+1) * vector[i] + (i+1)*2;
-            resultado += vector[i+1] + " - ";
+            vector[i + 1] = (i + 1) * vector[i] + (i + 1) * 2;
+            resultado += vector[i + 1] + " - ";
         }
-        
-        txtResultado7.setText("[" + resultado.substring(0, resultado.length()-3) + "]");
+
+        txtResultado7.setText("[" + resultado.substring(0, resultado.length() - 3) + "]");
+
+        try {
+            //Punto 8
+            resultado = "";
+            for (int i = 0; i < 10; i++) {
+                for (int j = 0; j < 10; j++) {
+                    if (i == j) {
+                        resultado += 1 + " - ";
+                    } else {
+                        resultado += 0 + " - ";
+                    }
+                }
+                resultado = resultado.substring(0, resultado.length() - 3) + "\n";
+            }
+            txtMatrizUnidad.setText(resultado);
+        } catch (NumberFormatException e) {
+            this.mensajeError();
+        }
     }//GEN-LAST:event_formWindowOpened
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnPunto1;
+    private javax.swing.JButton btnPunto10;
     private javax.swing.JButton btnPunto2;
     private javax.swing.JButton btnPunto3;
     private javax.swing.JButton btnPunto4;
@@ -1138,7 +1213,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton btnPunto6;
     private javax.swing.JButton btnPunto8;
     private javax.swing.JComboBox<String> cmPulgada;
-    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1185,14 +1259,13 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JTextField jTextField22;
-    private javax.swing.JTextField jTextField23;
+    private javax.swing.JTextArea txtAreaPunto10;
     private javax.swing.JTextField txtCatAdyacente;
     private javax.swing.JTextField txtCatOpuesto;
     private javax.swing.JTextField txtElementoMayor;
     private javax.swing.JTextField txtElementoMenor;
+    private javax.swing.JTextArea txtMatrizUnidad;
+    private javax.swing.JTextField txtPunto10;
     private javax.swing.JTextField txtPunto1_1;
     private javax.swing.JTextField txtPunto1_2;
     private javax.swing.JTextField txtPunto2;
@@ -1201,6 +1274,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextField txtPunto6;
     private javax.swing.JTextField txtPunto8;
     private javax.swing.JTextField txtResultado1;
+    private javax.swing.JTextField txtResultado10;
     private javax.swing.JTextField txtResultado2;
     private javax.swing.JTextField txtResultado3;
     private javax.swing.JTextField txtResultado4;
@@ -1212,4 +1286,13 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextField txtVectorResultado;
     private javax.swing.JTextField txtVectorResultado8;
     // End of variables declaration//GEN-END:variables
+
+    private void mensajeError() {
+        JOptionPane optionPane = new JOptionPane("El dato que ingreso no corresponde con el campo.");
+        optionPane.setMessageType(JOptionPane.ERROR_MESSAGE);
+
+        JDialog dialog = optionPane.createDialog("Erro de entrada de dato");
+        dialog.setAlwaysOnTop(true);
+        dialog.setVisible(true);
+    }
 }
